@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchema/refs/heads/main/campaign_item",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/campaign_item",
     "title": "Quintessential Campaign Item",
     "description": "A campaign item for a campaign",
     "type": "object",
