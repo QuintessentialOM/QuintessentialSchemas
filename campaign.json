@@ -1,0 +1,75 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchema/refs/heads/main/campaign",
+    "title": "Quintessential Campaign",
+    "description": "A custom campaign for Quintessential CE",
+    "type": "object",
+    "properties": {
+        "Title": {
+            "description": "Translation key for the title, drawn at the bottom center.",
+            "type": "string"
+        },
+        "SingleScreen": {
+            "description": "Whether all the chapters are shown simultaneously",
+            "type": "boolean",
+            "default": false
+        },
+        "PuzzleIcon": {
+            "description": "Path to the default icon for a standard puzzle",
+            "type": "string",
+            "default": ""
+        },
+        "PuzzleIconSmall": {
+            "description": "Path to the default icon for a standard puzzle, but smaller",
+            "type": "string",
+            "default": ""
+        },
+        "TutorialIcon": {
+            "description": "Path to the default icon for a tutorial puzzle",
+            "type": "string",
+            "default": ""
+        },
+        "TutorialIconSmall": {
+            "description": "Path to the default icon for a tutorial puzzle, but smaller",
+            "type": "string",
+            "default": ""
+        },
+        "SolitaireIcon": {
+            "description": "Path to the default icon for a game pf solitaire",
+            "type": "string",
+            "default": ""
+        },
+        "SolitaireIconSmall": {
+            "description": "Path to the default icon for a game pf solitaire, but smaller",
+            "type": "string",
+            "default": ""
+        },
+        "SolitaireType": {
+            "description": "Variant of Sigmar's Garden to use",
+            "type": "string",
+            "enum": [
+                "Normal",
+                "Quintessence",
+                "Colvan"
+            ],
+            "default": "Normal"
+        },
+        "Chapters": {
+            "description": "The individual chapters the story progresses through.",
+            "type": "array",
+            "items": {
+                "$ref": "campaing_chapter"
+            },
+            "default": []
+        },
+        "Components": {
+            "description": "The ids for components to be applied to the campaign",
+            "type": "array",
+            "items": {
+                "$ref": "identifier"
+            },
+            "default": []
+        }
+    },
+    "required": ["Title"]
+}

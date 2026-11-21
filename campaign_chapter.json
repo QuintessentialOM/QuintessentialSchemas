@@ -1,0 +1,80 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchema/refs/heads/main/campaing_chapter",
+    "title": "Quintessential Campaign Chapter",
+    "description": "A chapter for a campaign",
+    "type": "object",
+    "properties": {
+        "Title": {
+            "description": "Translation key for the chapter's title, drawn at the top of the puzzle list",
+            "type": "string"
+        },
+        "Name": {
+            "description": "Translation key for the chapter's name, drawn under the title",
+            "type": "string"
+        },
+        "Location": {
+            "description": "Translation key for the chapter's location, shown at the top center",
+            "type": "string"
+        },
+        "Items": {
+            "description": "The individual campaign entries, be they puzzles, pages, or cinematics",
+            "type": "array",
+            "items": {
+                "$ref": "campaign_item"
+            }
+        },
+        "Background": {
+            "description": "Path to the background for this chapter",
+            "type": "string",
+            "default": ""
+        },
+        "LockedIcon": {
+            "description": "Path to the chapter selector sector when this chapter is locked",
+            "type": "string",
+            "default": ""
+        },
+        "UnlockedIcon": {
+            "description": "Path to the chapter selector sector when this chapter is unlocked",
+            "type": "string",
+            "default": ""
+        },
+        "HoverIcon": {
+            "description": "Path to the chapter selector sector when this chapter is hovered over",
+            "type": "string",
+            "default": ""
+        },
+        "GemIcon": {
+            "description": "Path to the chapter selector gem",
+            "type": "string",
+            "default": ""
+        },
+        "ButtonOffset": {
+            "description": "Where the chapter's button hit detection lands relative to the bottom left corner of the chapter selector",
+            "$ref": "vector2",
+            "default": {
+                "X": 0,
+                "Y": 0
+            }
+        },
+        "Alignment": {
+            "description": "The position the chapter list is placed",
+            "type": "string",
+            "enum": [
+                "Left",
+                "Center",
+                "Right"
+            ],
+            "default": "Right"
+        },
+        "Components": {
+            "description": "The ids for components to be applied to this chapter",
+            "type": "array",
+            "items": {
+                "$ref": "identifier"
+            },
+            "default": []
+        }
+    },
+    "required": ["Title", "Name", "Location", "Items"]
+}

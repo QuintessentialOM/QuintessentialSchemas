@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchema/refs/heads/main/campaing_item",
+    "title": "Quintessential Campaign Item",
+    "description": "A campaign item for a campaign",
+    "type": "object",
+    "properties": {
+        "Id": {
+            "description": "The id for this item, used to reference the corresponding vignette data",
+            "type": "string"
+        },
+        "Name": {
+            "description": "Translation key for the name of this item, the list of which is below the chapter's name",
+            "type": "string"
+        },
+        "Type": {
+            "description": "What this item represents",
+            "type": "string",
+            "enum": [
+                "Puzzle",
+                "Cutscene",
+                "Letter",
+                "Solitaire"
+            ]
+        }
+    }
+}
