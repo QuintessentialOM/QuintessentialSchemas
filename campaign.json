@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchema/refs/heads/main/campaign",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/campaign",
     "title": "Quintessential Campaign",
     "description": "A custom campaign for Quintessential CE",
     "type": "object",
@@ -58,7 +58,7 @@
             "description": "The individual chapters the story progresses through.",
             "type": "array",
             "items": {
-                "$ref": "campaign_chapter"
+                "$ref": "campaign_chapter.json"
             },
             "default": []
         },
@@ -66,7 +66,7 @@
             "description": "The ids for components to be applied to the campaign",
             "type": "array",
             "items": {
-                "$ref": "identifier"
+                "$ref": "identifier.json"
             },
             "default": []
         }

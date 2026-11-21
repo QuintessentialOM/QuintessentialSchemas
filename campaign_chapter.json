@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchema/refs/heads/main/campaign_chapter",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/campaign_chapter",
     "title": "Quintessential Campaign Chapter",
     "description": "A chapter for a campaign",
     "type": "object",
@@ -21,7 +21,7 @@
             "description": "The individual campaign entries, be they puzzles, pages, or cinematics",
             "type": "array",
             "items": {
-                "$ref": "campaign_item"
+                "$ref": "campaign_item.json"
             }
         },
         "Background": {
@@ -51,7 +51,7 @@
         },
         "ButtonOffset": {
             "description": "Where the chapter's button hit detection lands relative to the bottom left corner of the chapter selector",
-            "$ref": "vector2",
+            "$ref": "vector2.json",
             "default": {
                 "X": 0,
                 "Y": 0
@@ -71,7 +71,7 @@
             "description": "The ids for components to be applied to this chapter",
             "type": "array",
             "items": {
-                "$ref": "identifier"
+                "$ref": "identifier.json"
             },
             "default": []
         }
