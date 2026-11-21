@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchema/refs/heads/main/campaing_chapter",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchema/refs/heads/main/campaign_chapter",
     "title": "Quintessential Campaign Chapter",
     "description": "A chapter for a campaign",
     "type": "object",

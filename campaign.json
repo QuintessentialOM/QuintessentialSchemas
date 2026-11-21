@@ -58,7 +58,7 @@
             "description": "The individual chapters the story progresses through.",
             "type": "array",
             "items": {
-                "$ref": "campaing_chapter"
+                "$ref": "campaign_chapter"
             },
             "default": []
         },
