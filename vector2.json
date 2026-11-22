@@ -1,5 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/vector2",
     "title": "Vector2",
     "description": "A 2D vector",
     "type": "object",

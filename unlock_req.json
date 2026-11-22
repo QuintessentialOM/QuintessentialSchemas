@@ -1,0 +1,94 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/unlock_req",
+    "title": "Unlock Requirement",
+    "description": "Conditions for a campaign item to be unlocked",
+    "type": [
+        "object",
+        "null"
+    ],
+    "properties": {
+        "Type": {
+            "description": "Constraint type",
+            "type": "string",
+            "enum": [
+                "Single",
+                "Many",
+                "SomeOfChapter",
+                "SomeOfMany",
+                "Never",
+                "Nothing",
+                "PuzzlesComplete"
+            ],
+            "default": "Nothing"
+        },
+        "Id": {
+            "description": "For Single, the id of an item to check",
+            "type": "string",
+            "default": ""
+        },
+        "Ids": {
+            "description": "For Many, or SomeOfMany, the ids of the items considered in this constraint",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": []
+        },
+        "Amount": {
+            "description": "For SomeOfChapter, SomeOfMany, and PuzzlesComplete, the number of items required to",
+            "type": "integer",
+            "minimum": 0,
+            "default": 0
+        }
+    },
+    "required": ["Type"],
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "Type": {
+                        "const": "Single"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "Id": {
+                        "minLength": 1
+                    }
+                },
+                "required": ["Id"]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "Type": {
+                        "enum": ["Many", "SomeOfMany"]
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "Ids": {
+                        "minItems": 1
+                    }
+                },
+                "required": ["Ids"]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "Type": {
+                        "enum": ["SomeOfChapter", "SomeOfMany", "PuzzlesComplete"]
+                    }
+                }
+            },
+            "then": {                
+                "required": ["Amount"]
+            }
+        }
+    ]
+}

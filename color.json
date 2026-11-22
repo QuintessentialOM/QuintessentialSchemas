@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/color",
+    "title": "Color",
+    "type": "object",
+    "properties": {
+        "R": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+        },
+        "G":{
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+        },
+        "B": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+        },
+        "A": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+        } 
+    },
+    "required": ["R", "G", "B", "A"]
+}

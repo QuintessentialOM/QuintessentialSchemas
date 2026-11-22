@@ -1,0 +1,84 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/document",
+    "title": "Document",
+    "type": "object",
+    "properties": {
+        "Items": {
+            "description": "The individual textures and text that layer to form a document",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Texture": {
+                        "description": "Path to a texture",
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Section": {
+                        "description": "an non-negative integer to index into a # separated list of strings from the vignette",
+                        "type": "integer",
+                        "default": 0,
+                        "minimum": 0
+                    },
+                    "Offset": {
+                        "description": "The offset for this item",
+                        "$ref": "vector2.json"
+                    },
+                    "Color": {
+                        "description": "The color of the text",
+                        "$ref": "color.json"
+                    },
+                    "Font": {
+                        "description": "The font to use",
+                        "type": "string",
+                        "enum": [
+                            "Cinzel 21",
+                            "Cormorant 11",
+                            "Cormorant 12.75",
+                            "Cormorant 15",
+                            "Cormorant 18",
+                            "Cormorant 22.5",
+                            "Crimson 9.75",
+                            "Crimson 10.5",
+                            "Crimson 12",
+                            "Crimson 13",
+                            "Crimson 15",
+                            "Crimson 16.5",
+                            "Crimson 21",
+                            "Reenie 17.25"
+                        ],
+                        "default": "Cormorant 15"
+                    },
+                    "Alignment": {
+                        "description": "What anchor point the Offset is moving",
+                        "type": "string",
+                        "enum": [
+                            "TopLeft",
+                            "TopEdge",
+                            "TopRight",
+                            "LeftEdge",
+                            "Center",
+                            "RightEdge",
+                            "BottomLeft",
+                            "BottomEdge",
+                            "BottomRight"
+                        ],
+                        "default": "TopLeft"
+                    },
+                    "Spacing": {
+                        "description": "Scale of line height",
+                        "type": "number",
+                        "default": 1
+                    },
+                    "LineWidth": {
+                        "description": "maximum width of text, overflow is replaced by an ellipsis",
+                        "type": "number",
+                        "minimum": 0,
+                        "default": 3.40282347E38
+                    }
+                }
+            }
+        }
+    }
+}

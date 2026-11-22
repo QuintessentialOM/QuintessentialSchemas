@@ -6,8 +6,9 @@
     "type": "object",
     "properties": {
         "Id": {
-            "description": "The id for this item, used to reference the corresponding vignette data",
-            "type": "string"
+            "description": "The id for this item, used to reference this in unlock requirements and corresponding vignette data",
+            "type": "string",
+            "minLength": 1
         },
         "Name": {
             "description": "Translation key for the name of this item, the list of which is below the chapter's name",
@@ -21,7 +22,102 @@
                 "Cutscene",
                 "Letter",
                 "Solitaire"
-            ]
+            ],
+            "default": "Puzzle"
+        },
+        "Puzzle": {
+            "description": "For a puzzle entry, the id of the puzzle to load",
+            "type": "string",
+            "default": ""
+        },
+        "UnlockRequirement": {
+            "description": "What constraints are required for this item to be unlocked",
+            "$ref": "unlock_req.json",
+            "default": {
+                "Type": "Nothing"
+            }
+        },
+        "Vignette": {
+            "description": "Whether this item has a vignette, required on cutscenes",
+            "type": "boolean",
+            "default": true
+        },
+        "Music": {
+            "description": "Path to the song that will play when this item is open, only valid for puzzles and cutscenes",
+            "type": "string",
+            "default": ""
+        },
+        "Fanfare": {
+            "description": "Path to the sound that plays when the puzzle is complete, only valid for puzzles",
+            "type": "string",
+            "default": ""
+        },
+        "Icon": {
+            "description": "An override for this entry's icon",
+            "type": "string",
+            "default": ""
+        },
+        "IconSmall": {
+            "description": "An override for this entry's icon, but smaller",
+            "type": "string",
+            "default": ""
+        },
+        "Document": {
+            "description": "A list of text and textures to form a document, only valid for documents",
+            "$ref": "document.json"
+        },
+        "Components": {
+            "description": "The ids for components to be applied to this chapter item",
+            "type": "array",
+            "items": {
+                "$ref": "identifier.json"
+            },
+            "default": []
         }
-    }
+    },
+    "required": ["Id", "Name", "Type"],
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "Type": {
+                        "const": "Puzzle"
+                    }
+                }
+            },
+            "then": {
+                "required": ["Puzzle"]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "Type": {
+                        "const": "Cutscene"
+                    }
+                }
+            },
+            "then": {
+                "not": {
+                    "properties": {
+                        "Vignette": {
+                            "const": false
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "Type": {
+                        "const": "Document"
+                    }
+                }
+            },
+            "then": {
+                "required": ["Document"]
+            }
+        }
+    ]
 }

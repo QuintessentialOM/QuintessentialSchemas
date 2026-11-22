@@ -18,11 +18,12 @@
             "type": "string"
         },
         "Items": {
-            "description": "The individual campaign entries, be they puzzles, pages, or cinematics",
+            "description": "The individual campaign entries, be they puzzles, pages, or cutscenes",
             "type": "array",
             "items": {
                 "$ref": "campaign_item.json"
-            }
+            },
+            "default": []
         },
         "Background": {
             "description": "Path to the background for this chapter",
@@ -51,11 +52,7 @@
         },
         "ButtonOffset": {
             "description": "Where the chapter's button hit detection lands relative to the bottom left corner of the chapter selector",
-            "$ref": "vector2.json",
-            "default": {
-                "X": 0,
-                "Y": 0
-            }
+            "$ref": "vector2.json"
         },
         "Alignment": {
             "description": "The position the chapter list is placed",
