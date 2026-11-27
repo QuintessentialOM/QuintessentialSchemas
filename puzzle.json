@@ -91,20 +91,22 @@
                         "default": []
                     }
                 },
-                "required": ["Pos"]
+                "required": [
+                    "Pos"
+                ]
             },
             "default": []
         },
         "Highlight": {
             "type": "array",
             "items": {
-                "$ref": "hex_index.js"
+                "$ref": "hex_index.json"
             }
         },
         "PartLimits": {
             "type": "object",
             "patternProperties": {
-                "^[^:]*:[^:]*$":{
+                "^[^:]*:[^:]*$": {
                     "type": "integer",
                     "minimum": 1,
                     "default": 1

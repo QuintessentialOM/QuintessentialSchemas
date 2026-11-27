@@ -69,5 +69,10 @@
             "$ref": "components.json"
         }
     },
-    "required": ["Title", "Name", "Location", "Items"]
+    "required": [
+        "Title",
+        "Name",
+        "Location",
+        "Items"
+    ]
 }
