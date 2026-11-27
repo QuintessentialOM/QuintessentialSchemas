@@ -27,8 +27,7 @@
                     ]
                 }
             },
-            "additionalProperties": false,
-            "minProperties": 1
+            "additionalProperties": false
         },
         "Bonds": {
             "type": "array",
@@ -59,8 +58,5 @@
         "Components": {
             "$ref": "components.json"
         }
-    },
-    "required": [
-        "Atoms"
-    ]
+    }
 }

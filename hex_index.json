@@ -10,7 +10,7 @@
             "default": 0
         },
         "R": {
-            "description": "The Uprightward offset of this hex",
+            "description": "The uprightward offset of this hex",
             "type": "integer",
             "default": 0
         }

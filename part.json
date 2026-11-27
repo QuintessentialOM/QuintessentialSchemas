@@ -8,8 +8,8 @@
             "$ref": "identifier.json"
         },
         "IsFixed": {
-           "type": "boolean",
-           "default": false
+            "type": "boolean",
+            "default": false
         },
         "Pos": {
             "$ref": "hex_index.json"

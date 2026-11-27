@@ -36,7 +36,10 @@
                         ]
                     }
                 },
-                "required": ["Pos", "Name"]
+                "required": [
+                    "Pos",
+                    "Name"
+                ]
             },
             "default": []
         },
@@ -58,7 +61,11 @@
                         }
                     }
                 },
-                "required": ["Pos1", "Pos2", "Hexes"]
+                "required": [
+                    "Pos1",
+                    "Pos2",
+                    "Hexes"
+                ]
             },
             "default": []
         },
