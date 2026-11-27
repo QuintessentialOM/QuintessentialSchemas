@@ -1,0 +1,76 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/molecule",
+    "title": "molecule",
+    "type": "object",
+    "properties": {
+        "Name": {
+            "description": "Translation key to molecule's name",
+            "type": "string"
+        },
+        "Atoms": {
+            "type": "object",
+            "patternProperties": {
+                "^-?\\d+,-?\\d+$": {
+                    "type": "object",
+                    "properties": {
+                        "Type": {
+                            "$ref": "identifier.json",
+                            "default": "om:earth"
+                        },
+                        "Components": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "identifier.json"
+                            },
+                            "default": []
+                        }
+                    },
+                    "required": [
+                        "Type"
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "minProperties": 1
+        },
+        "Bonds": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Types": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "identifier.json"
+                        },
+                        "default": [
+                            "om:standard"
+                        ]
+                    },
+                    "Pos1": {
+                        "$ref": "hex_index.json"
+                    },
+                    "Pos2": {
+                        "$ref": "hex_index.json"
+                    },
+                    "Components": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "identifier.json"
+                        }
+                    }
+                }
+            }
+        },
+        "Components": {
+            "type": "array",
+            "items": {
+                "$ref": "identifier.json"
+            }
+        }
+    },
+    "required": [
+        "Atoms"
+    ]
+}

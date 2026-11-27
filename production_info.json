@@ -1,0 +1,73 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/production_info",
+    "title": "Production Info",
+    "type": "object",
+    "properties": {
+        "TightLeft": {
+            "type": "boolean",
+            "default": false
+        },
+        "TightRight": {
+            "type": "boolean",
+            "default": false
+        },
+        "Isolation": {
+            "type": "boolean",
+            "default": false
+        },
+        "Chambers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Pos": {
+                        "$ref": "hex_index.json"
+                    },
+                    "Name": {
+                        "type": "string",
+                        "examples": [
+                            "Small",
+                            "SmallWide",
+                            "SmallWider",
+                            "Medium",
+                            "MediumWide",
+                            "Large"
+                        ]
+                    }
+                },
+                "required": ["Pos", "Name"]
+            },
+            "default": []
+        },
+        "Conduits": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Pos1": {
+                        "$ref": "hex_index.json"
+                    },
+                    "Pos2": {
+                        "$ref": "hex_index.json"
+                    },
+                    "Hexes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "hex_index.json"
+                        }
+                    }
+                },
+                "required": ["Pos1", "Pos2", "Hexes"]
+            },
+            "default": []
+        },
+        "Vial": {
+            "type": "array",
+            "items": {
+                "$ref": "vial_set.json"
+            },
+            "default": []
+        }
+    }
+}

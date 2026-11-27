@@ -42,7 +42,9 @@
             "default": 0
         }
     },
-    "required": ["Type"],
+    "required": [
+        "Type"
+    ],
     "allOf": [
         {
             "if": {
@@ -58,14 +60,19 @@
                         "minLength": 1
                     }
                 },
-                "required": ["Id"]
+                "required": [
+                    "Id"
+                ]
             }
         },
         {
             "if": {
                 "properties": {
                     "Type": {
-                        "enum": ["Many", "SomeOfMany"]
+                        "enum": [
+                            "Many",
+                            "SomeOfMany"
+                        ]
                     }
                 }
             },
@@ -75,19 +82,27 @@
                         "minItems": 1
                     }
                 },
-                "required": ["Ids"]
+                "required": [
+                    "Ids"
+                ]
             }
         },
         {
             "if": {
                 "properties": {
                     "Type": {
-                        "enum": ["SomeOfChapter", "SomeOfMany", "PuzzlesComplete"]
+                        "enum": [
+                            "SomeOfChapter",
+                            "SomeOfMany",
+                            "PuzzlesComplete"
+                        ]
                     }
                 }
             },
-            "then": {                
-                "required": ["Amount"]
+            "then": {
+                "required": [
+                    "Amount"
+                ]
             }
         }
     ]

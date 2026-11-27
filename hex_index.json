@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/hex_index",
+    "title": "HexIndex",
+    "type": "object",
+    "properties": {
+        "Q": {
+            "description": "The rightward offset of this hex",
+            "type": "integer",
+            "default": 0
+        },
+        "R": {
+            "description": "The Uprightward offset of this hex",
+            "type": "integer",
+            "default": 0
+        }
+    },
+    "required": [
+        "Q",
+        "R"
+    ]
+}

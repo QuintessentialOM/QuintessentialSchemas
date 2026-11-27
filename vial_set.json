@@ -1,0 +1,45 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/vial_set",
+    "title": "Vial Set",
+    "type": "object",
+    "properties": {
+        "Pos": {
+            "description": "Hex of this set's left-most corner",
+            "$ref": "hex_index.json"
+        },
+        "TopConnected": {
+            "description": "Whether this set is above or below",
+            "type": "boolean",
+            "default": true
+        },
+        "Textures": {
+            "description": "list of individual vials from left to right",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Primary": {
+                        "description": "Path to texture used when simulating, usually a full or empty vial",
+                        "type": "string",
+                        "default": "textures/pipelines/elemental_quicksilver/full"
+                    },
+                    "Secondary": {
+                        "description": "Path to texture used when recording, usually a draining or filling vial",
+                        "type": "string",
+                        "default": "textures/pipelines/elemental_quicksilver/draining"
+                    }
+                },
+                "required": [
+                    "Primary",
+                    "Secondary"
+                ]
+            }
+        }
+    },
+    "required": [
+        "Pos",
+        "TopConnected",
+        "Textures"
+    ]
+}

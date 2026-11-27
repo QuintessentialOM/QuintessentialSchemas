@@ -9,7 +9,7 @@
             "minimum": 0,
             "maximum": 1
         },
-        "G":{
+        "G": {
             "type": "number",
             "minimum": 0,
             "maximum": 1
@@ -23,7 +23,12 @@
             "type": "number",
             "minimum": 0,
             "maximum": 1
-        } 
+        }
     },
-    "required": ["R", "G", "B", "A"]
+    "required": [
+        "R",
+        "G",
+        "B",
+        "A"
+    ]
 }

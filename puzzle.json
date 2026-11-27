@@ -1,0 +1,144 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/puzzle",
+    "title": "Quintessential Puzzle",
+    "description": "A custom puzzle for Quintessential CE",
+    "type": "object",
+    "properties": {
+        "Id": {
+            "description": "A globally scoped id",
+            "type": "string",
+            "minLength": 1
+        },
+        "Name": {
+            "description": "Translation key for puzzle's name, shown in the solution selector and gif",
+            "type": "string",
+            "minLength": 1
+        },
+        "Author": {
+            "description": "For a journal puzzle, the name of the puzzle's creator",
+            "type": "string",
+            "default": ""
+        },
+        "Permissions": {
+            "description": "Comma separated list of vanilla permissions",
+            "type": "string",
+            "default": "CoreTools"
+        },
+        "CustomPermissions": {
+            "description": "List of modded permissions",
+            "type": "array",
+            "items": {
+                "$ref": "identifier.json"
+            },
+            "default": []
+        },
+        "Inputs": {
+            "type": "array",
+            "items": {
+                "$ref": "molecule.json"
+            }
+        },
+        "Outputs": {
+            "type": "array",
+            "items": {
+                "$ref": "molecule.json"
+            }
+        },
+        "OutputMultiplier": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1
+        },
+        "ProductionInfo": {
+            "$ref": "production_info.json"
+        },
+        "IsTutorial": {
+            "description": "Whether this puzzle is a tutorial",
+            "type": "boolean",
+            "default": false
+        },
+        "Notes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "RenderMode": {
+                        "type": "string",
+                        "enum": [
+                            "ProgramPanel",
+                            "PartPanel",
+                            "BoardPanel"
+                        ],
+                        "default": "BoardPanel"
+                    },
+                    "VisibilityMode": {
+                        "type": "string",
+                        "enum": [
+                            "Always",
+                            "NoInputOutput"
+                        ],
+                        "default": "Always"
+                    },
+                    "Pos": {
+                        "$ref": "vector2.json"
+                    },
+                    "Points": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "default": []
+                    }
+                },
+                "required": ["Pos"]
+            },
+            "default": []
+        },
+        "Highlight": {
+            "type": "array",
+            "items": {
+                "$ref": "hex_index.js"
+            }
+        },
+        "PartLimits": {
+            "type": "object",
+            "patternProperties": {
+                "^[^:]*:[^:]*$":{
+                    "type": "integer",
+                    "minimum": 1,
+                    "default": 1
+                }
+            },
+            "additionalProperties": false
+        },
+        "PresetParts": {
+            "description": "Parts Henley accidental got glue under",
+            "type": "array",
+            "items": {
+                "$ref": "part.json"
+            }
+        },
+        "PresetComponents": {
+            "description": "Components applied to a solution of this puzzle",
+            "type": "array",
+            "items": {
+                "$ref": "identifier.json"
+            }
+        },
+        "Components": {
+            "description": "Components applied to this puzzle",
+            "type": "array",
+            "items": {
+                "$ref": "identifier.json"
+            }
+        }
+    },
+    "required": [
+        "Id",
+        "Name",
+        "Permissions",
+        "Inputs",
+        "Outputs"
+    ]
+}

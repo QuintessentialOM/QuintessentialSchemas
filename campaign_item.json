@@ -75,7 +75,11 @@
             "default": []
         }
     },
-    "required": ["Id", "Name", "Type"],
+    "required": [
+        "Id",
+        "Name",
+        "Type"
+    ],
     "allOf": [
         {
             "if": {
@@ -86,7 +90,9 @@
                 }
             },
             "then": {
-                "required": ["Puzzle"]
+                "required": [
+                    "Puzzle"
+                ]
             }
         },
         {
@@ -116,7 +122,9 @@
                 }
             },
             "then": {
-                "required": ["Document"]
+                "required": [
+                    "Document"
+                ]
             }
         }
     ]
