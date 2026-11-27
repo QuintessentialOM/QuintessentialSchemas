@@ -19,11 +19,7 @@
                             "default": "om:earth"
                         },
                         "Components": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "identifier.json"
-                            },
-                            "default": []
+                            "$ref": "components.json"
                         }
                     },
                     "required": [
@@ -55,19 +51,13 @@
                         "$ref": "hex_index.json"
                     },
                     "Components": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "identifier.json"
-                        }
+                        "$ref": "components.json"
                     }
                 }
             }
         },
         "Components": {
-            "type": "array",
-            "items": {
-                "$ref": "identifier.json"
-            }
+            "$ref": "components.json"
         }
     },
     "required": [

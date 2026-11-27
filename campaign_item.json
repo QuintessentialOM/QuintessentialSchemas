@@ -68,11 +68,7 @@
         },
         "Components": {
             "description": "The ids for components to be applied to this chapter item",
-            "type": "array",
-            "items": {
-                "$ref": "identifier.json"
-            },
-            "default": []
+            "$ref": "components.json"
         }
     },
     "required": [

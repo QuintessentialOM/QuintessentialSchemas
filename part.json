@@ -1,0 +1,58 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/QuintessentialOM/QuintessentialSchemas/refs/heads/main/part",
+    "title": "Part",
+    "type": "object",
+    "properties": {
+        "Id": {
+            "$ref": "identifier.json"
+        },
+        "IsFixed": {
+           "type": "boolean",
+           "default": false
+        },
+        "Pos": {
+            "$ref": "hex_index.json"
+        },
+        "Length": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+        },
+        "Rotation": {
+            "type": "integer"
+        },
+        "IOIndex": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "ProgramIndex": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "ConduitIndex": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "Program": {
+            "type": "object",
+            "patternProperties": {
+                "^\\d+$": {
+                    "$ref": "identifier.json"
+                }
+            },
+            "additionalProperties": false,
+            "default": {}
+        },
+        "Track": {
+            "type": "array",
+            "items": {
+                "$ref": "hex_index.json"
+            },
+            "default": []
+        },
+        "Components": {
+            "$ref": "components.json"
+        }
+    }
+}

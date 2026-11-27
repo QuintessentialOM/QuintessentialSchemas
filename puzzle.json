@@ -121,17 +121,11 @@
         },
         "PresetComponents": {
             "description": "Components applied to a solution of this puzzle",
-            "type": "array",
-            "items": {
-                "$ref": "identifier.json"
-            }
+            "$ref": "components.json"
         },
         "Components": {
             "description": "Components applied to this puzzle",
-            "type": "array",
-            "items": {
-                "$ref": "identifier.json"
-            }
+            "$ref": "components.json"
         }
     },
     "required": [
